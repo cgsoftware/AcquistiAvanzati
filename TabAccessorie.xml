@@ -1,0 +1,51 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+        <record id="puchase_costacc_view_tree" model="ir.ui.view">
+            <field name="name">puchase_costacc.tree</field>
+            <field name="model">costi_acc_acq</field>
+            <field name="type">tree</field>
+            <field name="arch" type="xml">
+                <tree string="Costi Accessori su Acquisto">
+                    <field name="name" select="1"/>
+                    <field name="contropartita" select="1"/>
+                   
+                </tree>
+            </field>
+        </record>
+
+        <record id="puchase_costacc_view_form" model="ir.ui.view">
+            <field name="name">costi_acc_acq.form</field>
+            <field name="model">costi_acc_acq</field>
+            <field name="type">form</field>
+            <field name="arch" type="xml">
+                <form string="Costi Accessori su Acquisto">
+                    <group col="6" colspan="4">
+                    <field name="name"/>
+                    <field name="contropartita" />
+                    <newline/>
+                   </group>     
+                </form>
+            </field>
+        </record>
+      
+        <!--  Action  -->
+      
+        <record id="action_costi_acc_acq" model="ir.actions.act_window">
+            <field name="name">Costi Accessori</field>
+            <field name="type">ir.actions.act_window</field>
+            <field name="res_model">costi_acc_acq</field>
+		<field name="view_mode">tree,form</field>
+        </record>
+        
+        <!--  Menù Numeri Progressivi Documenti -->
+
+        <menuitem action="action_costi_acc_acq" id="menu_costi_acc_acq_tree" parent="purchase.menu_purchase_config_purchase"/>
+    
+    
+  </data>
+    
+    
+</openerp>
+  

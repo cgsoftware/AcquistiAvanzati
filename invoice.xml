@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<openerp>
+    <data>
+    
+        <record id="view_invoice_costiacc_form" model="ir.ui.view">
+            <field name="name">invoice_costiacc.inherit</field>
+            <field name="model">account.invoice</field>
+            <field name="type">form</field>
+            <field name="inherit_id" ref="account.invoice_supplier_form"/>
+             <field name="arch" type="xml">
+				<notebook position="inside">
+				<page string="Elenco Costi Accessori">
+					<field name="totale_costi" />
+					<newline></newline>
+				<group colspan="4" col='4'>
+                   <field colspan="4" mode="tree,form" name="costi_acc_ids" nolabel="1" widget="one2many_list"  >
+                   
+                   
+                                <tree string="Righe Costi Accessori" editable="bottom">
+                                    <field name="costo_acc_id" />
+                                    <field name="costo_acc" />
+                                </tree>
+                   
+                   
+                   </field>
+                   </group>				
+				</page>
+				</notebook>
+				<field  name="uos_id" position="after">
+				  	<field name="costo_acc_rip" />
+				
+				</field>
+           </field>
+        </record>
+            
+  
+    
+  </data>
+    
+    
+</openerp>
+  
